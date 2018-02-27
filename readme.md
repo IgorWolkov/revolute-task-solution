@@ -1,5 +1,5 @@
 
-Start the first node of cluster with following parameters:
+Start the first node of the cluster with following parameters:
 
 web host:
 ```
@@ -33,12 +33,12 @@ clusterRetriesDelay=1
 
 number of max attempts to get lock (this value should be the same for all instances):
 ```
-clusterMaxRetries=10 - this value should be the same for all instances
+clusterMaxRetries=10
 ```
 
 timeout for getting response in seconds (this value should be the same for all instances):
 ```
-clusterTimeout=30 run - this value should be the same for all instances
+clusterTimeout=30 run
 ```
 
 Run the first node
@@ -48,7 +48,7 @@ sbt> sbt -DwebAppHost=localhost -DwebAppPort=8080 -DclusterSeedNodes="akka://Clu
 
 ```
 
-Now cluster is empty. Try to get information for account #`42`
+Now the cluster contains no data. Try to get the information about account #`42`
 ```
 GET localhost:8080/v1/accounts/42
 ```
@@ -90,7 +90,7 @@ Response example:
 }
 ```
 
-Add the next #84 account
+Add the next #`84` account
 ```
 PUT localhost:4400/v1/accounts
 ```
@@ -116,7 +116,7 @@ Response example:
 }
 ```
 
-Get the information about #42 account
+Get the information about #`42` account
 ```
 GET localhost:8080/v1/accounts/42
 ```
@@ -148,7 +148,7 @@ Response example:
 }
 ```
 
-Get the information about #84 account
+Get the information about #`84` account
 ```
 GET localhost:8080/v1/accounts/84
 ```
@@ -181,7 +181,7 @@ Response example:
 ```
 
 
-Transfer 20 coins from #42 to #84
+Transfer 20 coins from #`42` to #`84`
 ```
 POST localhost:8080/v1/accounts/transfer
 ```
@@ -209,7 +209,7 @@ Response example:
 }
 ```
 
-Get the information about #42 account. The balance was changed.
+Get the information about #`42` account. The balance was changed.
 ```
 GET localhost:8080/v1/accounts/42
 ```
